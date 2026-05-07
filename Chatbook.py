@@ -14,12 +14,34 @@ class Chatbook:
                            5. Press any other key to exit""")
                            
         if ui=="1":
-            pass
+            self.signup()
         elif ui=='2':
-            pass
+            self.signin()
         elif ui=='3':
             pass
         else:
             exit()
+
+    def signup(self):
+        email=input("Enter your email here-> ")
+        pwd=input("Enter your password here-> ")
+        self.username=email
+        self.password=pwd
+        print("Sign up completed")
+        print("\n")
+        self.menu()
+
+    def signin(self):
+        if self.username=='' and self.password=='':
+            print("You need to signup")
+        else:
+            uname=input("Enter your email-> ")
+            pwd=input("Enter your password")
+            if self.username==uname and self.password==pwd:
+                print("You have logged in")
+            else:
+                print("Enter details correctly")
+        print("\n")
+        self.menu()
 
 obj=Chatbook()
